@@ -322,18 +322,26 @@ class Appraisal:
         rows.sort(key=lambda r: abs(r["bits"]), reverse=True)
         return rows
 
-    def composition(self) -> dict:
-        """How much of this model is cited evidence versus judgement?
+    # Kind values treated as "hard" evidence by composition(). Domain implants
+    # use different grading vocabularies — cogtools uses cited/derived/elicited/
+    # absent; STEM uses measured/derived/modelled/analogue/expert/absent. Both
+    # map onto the same axis: observed-or-computed vs. judged. This set is the
+    # union so any implant's models report honest composition without forking.
+    HARD_KINDS = frozenset({"cited", "derived", "measured", "modelled", "analogue"})
 
-        A model built from ten cited inputs is a different object from one
+    def composition(self) -> dict:
+        """How much of this model is hard evidence versus judgement?
+
+        A model built from ten hard inputs is a different object from one
         built from ten elicited guesses, and the reader must be able to see
-        which they are holding. "Hard" inputs are `cited` and `derived`.
+        which they are holding. "Hard" inputs are those in HARD_KINDS —
+        the union of grading vocabularies across known implants.
         """
         counts: dict[str, int] = {}
         for e in self.evidence:
             counts[e.kind] = counts.get(e.kind, 0) + 1
         total = max(1, len(self.evidence))
-        hard = sum(counts.get(k, 0) for k in ("cited", "derived"))
+        hard = sum(counts.get(k, 0) for k in self.HARD_KINDS)
         return {"counts": counts, "n": len(self.evidence),
                 "hard_fraction": hard / total,
                 "uncited": sum(1 for e in self.evidence if not e.source)}
@@ -380,7 +388,7 @@ class Appraisal:
                      f"{r['label']} | {r['kind']} | {r['source'] or '—'} |")
         L.append("")
         L.append(f"**Composition** {comp['n']} items; "
-                 f"{comp['hard_fraction'] * 100:.0f} % cited or derived; "
+                 f"{comp['hard_fraction'] * 100:.0f} % hard evidence; "
                  f"{comp['uncited']} without a source.")
         if comp["uncited"]:
             L.append("")
