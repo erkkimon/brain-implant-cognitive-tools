@@ -1,0 +1,35 @@
+# brainpick.toml — how this brain is compiled and served (SHARED policy, committed).
+# Machine-local model endpoints live in brainpick.local.toml beside this file —
+# it deep-merges over this one and stays out of git. Run `brainpick init` to
+# detect backends and mint a [bundle] id (a stable address for this brain).
+spec = "0.1"
+
+[bundle]
+root = "_brain"
+exclude = ["raw/*"]     # source material stays greppable but never surfaces in results
+id = "pqm0nlqbyxs1cksy3335i"   # minted once — an address for this brain implant, never a credential
+
+[index]
+mode = "section"        # brainpick owns a generated block at the end of index.md
+
+[brain]
+format = 3              # the brainpick brain format (spec/85): day journals, todo/ and conventions/ in the brain
+# PUBLIC — write every page for a stranger on the internet: no host names, no
+# internal paths, no personal detail, no credentials. The standing rule is
+# _brain/conventions/written-to-be-public.md — read it before writing here.
+audience = "public"     # personal | team | public — who this brain is written for
+origin = "https://github.com/erkkimon/brain-implant-cognitive-tools"
+# readers = []          # for team: who reads it, by handle or role
+
+# Memories fade — a ranking factor, never a deletion: a doc's search score is
+# multiplied by 2^(-age/half_life) on its `timestamp`, floored so it stays
+# recallable. Slow by default. When the lists silt up with stale material,
+# STEEPEN the curve here (fewer days) instead of deleting; a single page can
+# pin itself with `half_life: 0` in its frontmatter or let go with `half_life: 7`.
+[half_life]
+default = 365           # days; 0 = never fades
+[half_life.folders]     # folder → days, the most nested folder wins
+journals = 180          # episodic memory fades first
+todo = 90               # an open list should be a fresh list
+skills = 0              # procedural memory never fades
+conventions = 0         # rules never fade

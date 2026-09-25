@@ -1,0 +1,5 @@
+_temp
+brainpick.local.toml
+.brainpick/
+.brainpick-auth.json
+__pycache__/

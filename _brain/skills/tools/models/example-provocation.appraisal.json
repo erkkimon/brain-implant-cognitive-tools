@@ -1,0 +1,103 @@
+{
+  "claim": "Example: a provocation model \u2014 replace every input with your own",
+  "assessor": "example",
+  "date": "2026-09-25",
+  "prior": {
+    "p": 0.2,
+    "reference_class": "an illustrative reference class; the reader must substitute a real one",
+    "source": "provocation",
+    "p_low": 0.05,
+    "p_high": 0.5
+  },
+  "evidence": [
+    {
+      "name": "a cited finding that favours the claim",
+      "lr": 4.0,
+      "lr_low": 2.0,
+      "lr_high": 8.0,
+      "kind": "cited",
+      "source": "placeholder: cite the paper or page that states this ratio",
+      "note": "placeholder \u2014 replace with a real cited likelihood ratio and its source"
+    },
+    {
+      "name": "an expert's judgement that weakly disfavours the claim",
+      "lr": 0.6,
+      "lr_low": 0.3,
+      "lr_high": 0.9,
+      "kind": "elicited",
+      "source": "placeholder: name who was asked and when",
+      "note": "placeholder \u2014 replace with a real elicited judgement and its provenance"
+    },
+    {
+      "name": "something that would have been found if the claim were true, and was not",
+      "lr": 0.5000000005,
+      "lr_low": 0.3000000003,
+      "lr_high": 0.7000000006999999,
+      "kind": "absent",
+      "source": "placeholder: describe the search that was actually made",
+      "note": "placeholder \u2014 LR from a search with sensitivity 0.5; the interval follows from sensitivity 0.3\u20130.7"
+    }
+  ],
+  "result": {
+    "n": 20000,
+    "p05": 0.056178514005832556,
+    "p25": 0.14407852618505548,
+    "median": 0.2526452069330015,
+    "p75": 0.3900859647388558,
+    "p95": 0.5776187324660246,
+    "mean": 0.2769907436659831,
+    "point": 0.23076923094674556
+  },
+  "prior_sensitivity": {
+    "rows": [
+      [
+        0.001,
+        0.0011997600491887226
+      ],
+      [
+        0.01,
+        0.01197604791602424
+      ],
+      [
+        0.05,
+        0.05940594064993628
+      ],
+      [
+        0.1,
+        0.11764705892733565
+      ],
+      [
+        0.25,
+        0.28571428591836734
+      ],
+      [
+        0.5,
+        0.5454545457024793
+      ],
+      [
+        0.75,
+        0.7826086958223062
+      ],
+      [
+        0.9,
+        0.9152542373656996
+      ]
+    ],
+    "swing": 0.9140544773165108,
+    "verdict": "prior-dominated",
+    "evidence_bits": 0.26303440727648897,
+    "prior_span_bits": 4.247927513443585,
+    "dominance": 0.061920643994996034
+  },
+  "composition": {
+    "counts": {
+      "cited": 1,
+      "elicited": 1,
+      "absent": 1
+    },
+    "n": 3,
+    "hard_fraction": 0.3333333333333333,
+    "uncited": 0
+  },
+  "notes": "Every number here is a placeholder chosen to show the shape of a model: an interval prior, a cited item, an elicited item and an absence item. Replace all of them before citing anything."
+}
