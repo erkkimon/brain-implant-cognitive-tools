@@ -104,7 +104,10 @@ brainpick integrate claude-code           # or: opencode | dsh | agents-md
 ```
 
 `brainpick integrate` writes the Agent Skill into your harness and prints
-the MCP snippet to paste. Mount the philosophy implant the same way:
+the MCP snippet to paste. If a brainpick MCP server is already running,
+restart it after `brainpick register` — it reads the registry at start-up,
+so a freshly registered implant is "unknown" to it until then. Mount the
+philosophy implant the same way:
 
 ```bash
 git clone https://github.com/erkkimon/brain-implant-philosophy

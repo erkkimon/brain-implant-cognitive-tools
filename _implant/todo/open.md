@@ -2,7 +2,7 @@
 type: todo
 title: Open
 description: What is still to be done — the implant's live work queue.
-timestamp: 2026-09-25T18:30:00Z
+timestamp: 2026-09-25T21:30:00Z
 ---
 
 # Open
@@ -20,9 +20,9 @@ YYYY-MM-DD)` and move it to `archive/YYYY-MM-DD.md` the same or the next day.
 ## Tools
 
 - [ ] calibration ledger: record resolved credences and score them (Brier); a credence machine never scored is a rhetoric machine
+- [ ] reference-class finder: given a claim, propose candidate reference classes and the base rate each implies, with the receipt for each rate
 - [ ] systematic-checklist runner: walk a catalogue (from a domain implant) instead of memory, emitting a per-item yes/no with a reason
 
 ## Infrastructure
 
-- [ ] set `origin` in brainpick.toml when the upstream repository exists
 - [ ] once published: have the domain implants mount this one and drop their private copies of the appraiser
