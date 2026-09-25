@@ -1,7 +1,7 @@
 ---
 type: skill
 title: Using the brain implant
-description: "Use when reading from or writing to this brain implant — before answering from memory, before grepping, and before adding or changing any doc in _brain/. Explains what an implant is (one half of a brain, the other half being the agent's own cortex), where opinions go (the cortex, never here), and the read and write discipline the contract enforces."
+description: "Use when reading from or writing to this brain implant — before answering from memory, before grepping, and before adding or changing any doc in _implant/. Explains what an implant is (one half of a brain, the other half being the agent's own cortex), where opinions go (the cortex, never here), and the read and write discipline the contract enforces."
 timestamp: 2026-09-25T18:30:00Z
 depends_on: []
 export: agent-skill
@@ -9,7 +9,7 @@ export: agent-skill
 
 # Using the brain implant
 
-`_brain/` is a **brain implant**: a public, shared knowledge bundle that an
+`_implant/` is a **brain implant**: a public, shared knowledge bundle that an
 agent mounts beside its own memory. In brainpick's terms a *brain* is a
 **cortex** — the agent's own, private memory — plus any number of
 **implants** mounted alongside it
@@ -35,7 +35,7 @@ fix the implant, not route around it.
 ## First: pull
 
 **Before reading anything, pull the implant's latest version** (`git pull`
-in the repository that holds it — every brain, if several are mounted). An
+in the repository that holds it — every brain and implant, if several are mounted). An
 implant is shared memory: other agents and people commit to it between your
 sessions, and an answer built on a stale checkout is built on knowledge the
 implant has already corrected. Pull first, then read; if the pull brings
@@ -81,7 +81,7 @@ short.
   it on the first entry of the day; headings inside are free — `## HH:MM`
   or a title, newest first). **Before the first entry of a new day, move
   yesterday's file to `journals/archive/YYYY/MM/`**
-  (`mkdir -p _brain/journals/archive/YYYY/MM && git mv …`) — the contract
+  (`mkdir -p _implant/journals/archive/YYYY/MM && git mv …`) — the contract
   blocks a commit with two unarchived days.
 - **To-dos live in `todo/open.md`.** A task that surfaces mid-work goes
   there as `- [ ] …`. When it is done, tick it `- [x] … (done: YYYY-MM-DD)`
@@ -119,9 +119,9 @@ short.
 ## Several brains: subsidiarity
 
 When brains conflict: the closest wins. Update both. Then decide — keep the
-information duplicated (readers of the farther brain may not have the
+information duplicated (readers of the farther implant may not have the
 closer one) or replace it with a `brain://` pointer. Record the episode in
-the journal of the brain that changed. Never resolve a conflict by writing
+the journal of the implant that changed. Never resolve a conflict by writing
 your *verdict* into an implant — that is a cortex entry.
 
 ## Where this comes from

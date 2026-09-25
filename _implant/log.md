@@ -1,4 +1,4 @@
-# Brain update log
+# Implant update log
 
 ## 2026-09-25
 

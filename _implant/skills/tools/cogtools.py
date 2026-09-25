@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""cogtools — the brain's cognitive tools, on one command line.
+"""cogtools — the brain implant's cognitive tools, on one command line.
 
 Every subcommand replays a saved model deterministically and prints its
 result with the inputs that produced it, so a reader can dispute a named

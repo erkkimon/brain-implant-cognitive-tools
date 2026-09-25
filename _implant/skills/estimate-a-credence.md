@@ -94,7 +94,7 @@ Ask the user whether they accept each ratio. Record whose number each one is.
 ### 5. Run the tool — never the arithmetic in your head
 
 ```python
-import sys; sys.path.insert(0, "_brain/skills/tools")
+import sys; sys.path.insert(0, "_implant/skills/tools")
 from cogtools.appraise import Appraisal, Prior, Evidence
 ap = Appraisal(
     claim="…",
@@ -110,7 +110,7 @@ print(ap.report())
 open("model.json", "w").write(ap.to_json())
 ```
 
-Replay any saved model with `python3 _brain/skills/tools/cogtools.py appraise model.json`.
+Replay any saved model with `python3 _implant/skills/tools/cogtools.py appraise model.json`.
 
 ### 6. Read the report the right way round
 

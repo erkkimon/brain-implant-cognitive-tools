@@ -1,90 +1,144 @@
-# brain-implant-cognitive-tools
+# Cognitive Tools Brain Implant for brainpick
 
-A **brainpick brain implant** holding cognitive tools for AI agents: small,
-deterministic, replayable tools that cover the architectural blind spots of a
-language model — gut-feeling arithmetic, unsourced confidence, a probability
-stated as if it had been measured. An agent mounts this implant beside its
-own memory (its *cortex*) and beside domain implants (the first is
-[brain-implant-philosophy](https://github.com/erkkimon/brain-implant-philosophy)),
-and the skills here tell it when to stop generating and start computing.
+**A Bayesian calculator and other reasoning tools for AI agents** — Claude
+Code, Codex, OpenCode, Cursor, Gemini CLI, Copilot, or any agent that can
+read a folder of markdown and run Python. The tools here are small,
+deterministic and replayable, and they cover the architectural blind spots
+of a language model: gut-feeling arithmetic, unsourced confidence, a
+probability stated as if it had been measured. The skills tell the agent
+*when* to stop generating and start computing.
 
-The first tool is the **Bayesian credence appraiser**: a model of a belief —
-a prior with a named reference class, evidence items with likelihood ratios
-and their sources, every input as an interval — that reports a *range*, says
-whether the evidence or the prior is carrying the result, and is saved as
-JSON so anyone can change an input and replay it. The number is never the
-product; the model is.
+It is a **brain implant**: a shared, version-controlled half of a brain that
+an agent plugs in beside its own memory (its *cortex*) and beside domain
+implants. It is meant to be mounted together with the
+[philosophy brain implant](https://github.com/erkkimon/brain-implant-philosophy),
+which supplies what a Bayesian model needs to be *educated* — reference
+classes, cited findings, and the catalogue of biases that corrupt a prior —
+while this implant supplies the machinery that turns those into a number
+with a range and a receipt.
 
-Pull requests are welcome, including from agents.
+> Pull requests are welcome, including from agents. The rules this
+> repository follows are machine-checked on every commit.
 
----
+## The flagship: a Bayesian calculator for gut feelings
 
-## Using this with an agent
+Ask a language model "how likely is it?" and it produces a number that
+sounds measured and is not. The **credence appraiser** replaces that number
+with a model:
 
-### If brainpick is already installed
+- a **prior** with a named reference class — *what fraction of things like
+  this turn out true?* — as an interval, not a point;
+- **evidence items**, each with a likelihood ratio, its source, and a kind:
+  *cited*, *derived*, *elicited* from the user, or *absent* — the evidence
+  that would have been found if the claim were true and was not;
+- a **posterior** reported as a median and a 90 % interval by Monte Carlo
+  over the input intervals, never a bare point;
+- a **prior-sensitivity sweep** that says, in bits, whether the evidence or
+  the prior is carrying the result — so a "70 %" that is really a
+  restated prior is exposed as one;
+- the whole thing **saved as JSON** so anyone can change one input and
+  replay it.
 
-```bash
-git clone <this-repo> && cd brain-implant-cognitive-tools
-brainpick compile --root .          # --root is where brainpick.toml lives
-brainpick overview --root .         # start here
-```
-
-Then `brainpick search`, `brainpick read`, `brainpick neighbors`. To mount it
-as an implant in an agent harness:
-
-```bash
-brainpick register "$PWD" --implant --alias cognitive-tools
-brainpick integrate                 # writes harness config (Claude Code, opencode, …)
-```
-
-### If brainpick is not installed
-
-brainpick is a Python CLI on PyPI. Install the `[vectors]` extra, otherwise
-the vector tier is silently off and search degrades to keyword only:
-
-```bash
-uv tool install "brainpick[vectors]"      # recommended
-# or: pipx install "brainpick[vectors]"
-```
-
-If `brainpick` is not found afterwards it is almost certainly in
-`~/.local/bin`. Without installing anything: `uvx brainpick overview --root .`
-
-Source and documentation: <https://github.com/benquemax/brainpick>
-
-**brainpick >= 0.7.0 is required** (brain format 3 — `type: convention`
-pages are invisible to older engines, and the conventions are the point of
-this repository); **>= 0.8.1 to serve it** with `brainpick serve`.
-
-## Running the tools without an agent
-
-Pure standard-library Python 3.10+; nothing reaches the network.
+The skill [Estimate a credence](_implant/skills/estimate-a-credence.md)
+walks the agent through elicitation: it asks the user for the factors, asks
+what evidence was looked for, writes the model, runs it, and reports the
+range with its composition (*33 % cited, 0 without a source*). The output is
+an educated gut feeling — educated because every input is on the table, a
+gut feeling because that is all a credence is.
 
 ```bash
-cd _brain/skills/tools
-python3 selftest.py                                     # verify the appraiser
+cd _implant/skills/tools
+python3 selftest.py
 python3 cogtools.py appraise models/example-provocation.appraisal.json
 ```
 
 The example model is a **provocation**: every number in it is a placeholder
-whose only purpose is to be replaced by your own. Copy it, change the claim,
-the prior and the evidence, replay it, and argue about the inputs — that is
-the whole method.
+whose only purpose is to be replaced by yours. Copy it, change the claim,
+the prior and the evidence, replay it, and argue about the inputs. That is
+the whole method, and it is the reason the number is never the product —
+the model is.
 
-## How this repository is organised
+## Skills included
 
-`_brain/` is the bundle. Its folders are memory types, one job each:
+| Skill | What it does |
+| --- | --- |
+| [Estimate a credence](_implant/skills/estimate-a-credence.md) | Turns "probably" into a stated model: elicits the reference class, the evidence and its sources, runs the appraiser, reports a range with what is carrying it. |
+| [Using the brain implant](_implant/skills/using-the-brain-implant.md) | How to read and write an implant: consult before answering from memory, ground every claim, keep opinions in the cortex. |
+
+More tools follow the same pattern — a deterministic script, a self-test,
+the skill that drives it, and a knowledge page that carries the case
+against the method as well as for it. The open list is in
+`_implant/todo/open.md`.
+
+## Quick start
+
+### Option A — clone it and point your agent at it
+
+```bash
+git clone https://github.com/erkkimon/brain-implant-cognitive-tools
+```
+
+Tell your agent to read `_implant/skills/index.md`, then the skill. The
+tools are standard-library Python 3.10+ and never reach the network. This
+works — and the agent will use the calculator only when it remembers that
+it exists.
+
+### Option B — mount it as a brain implant with brainpick
+
+[brainpick](https://github.com/benquemax/brainpick) compiles a folder like
+this one into a link graph, a keyword index and a vector index, and exposes
+them to your agent as MCP tools — `brain_overview`, `brain_search`,
+`brain_read`, `brain_neighbors`. Skills are listed first and boosted in
+search, so the moment the agent is about to say "unlikely", a search for
+that surfaces the procedure that computes it instead. Several implants and
+the agent's own brain federate into one address space, which is how this
+implant and the philosophy implant work as one: the philosophy side holds
+the factors, this side holds the arithmetic.
+
+```bash
+uv tool install "brainpick[vectors]"      # or: pipx install "brainpick[vectors]"
+git clone https://github.com/erkkimon/brain-implant-cognitive-tools && cd brain-implant-cognitive-tools
+brainpick compile --root .
+brainpick register "$PWD" --implant --alias cognitive-tools
+brainpick integrate claude-code           # or: opencode | dsh | agents-md
+```
+
+`brainpick integrate` writes the Agent Skill into your harness and prints
+the MCP snippet to paste. Mount the philosophy implant the same way:
+
+```bash
+git clone https://github.com/erkkimon/brain-implant-philosophy
+brainpick register "$PWD/brain-implant-philosophy" --implant --alias philosophy
+```
+
+Without an agent, the same graph is on the command line:
+
+```bash
+brainpick overview --root .
+brainpick search --root . "credence"
+brainpick read --root . conventions/credence-is-a-model-not-a-measurement.md
+```
+
+If `brainpick` is not found after installing, it is in `~/.local/bin`.
+brainpick **≥ 0.7.0** is required (brain format 3 — `type: convention`
+pages are invisible to older engines, and the conventions are the point);
+**≥ 0.8.1** to serve it with `brainpick serve`. No install at all:
+`uvx brainpick overview --root .`
+
+## How the repository is organised
+
+`_implant/` is the bundle. Its folders are memory types, one job each:
 
 | Folder | Holds |
 | --- | --- |
-| `conventions/` | Standing rules: receipts, credence-as-model, compute-never-guess, publication |
-| `skills/` | Procedures an agent follows, and the tools they drive (`skills/tools/`) |
+| `skills/` | The procedures above and the tools they drive (`skills/tools/`) |
+| `conventions/` | Standing rules: compute-never-guess, credence-is-a-model-not-a-measurement, every-claim-carries-its-receipt, evidence before authority, publication, excerpts |
 | `knowledge/` | The concepts behind the tools — and the case against each method |
 | `vision/` | Why this implant exists, as a book |
 | `journals/` | What happened, one file per day |
 | `plans/` | Decided work |
 | `todo/` | The live work queue |
-| `raw/` | Excerpts that ground claims, excluded from search results |
+| `raw/` | Citation excerpts, never copies, excluded from search results |
 
 Read `conventions/` first — a rule constrains what every other read is for —
 then `skills/`, then `knowledge/`.
@@ -93,7 +147,9 @@ then `skills/`, then `knowledge/`.
 
 This repository is governed by a [henxels](https://pypi.org/project/henxels/)
 contract — machine-checked rules in `henxels.yaml`, digested for agents into
-`AGENTS.md`. It runs on commit. Install it before contributing:
+`AGENTS.md`. It runs on commit: the implant must compile fresh, every link
+must land, every page must carry its grounding, the tools must pass their
+self-test. Install it before contributing:
 
 ```bash
 uv tool install henxels && henxels init
