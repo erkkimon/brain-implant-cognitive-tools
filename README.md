@@ -107,6 +107,23 @@ its citation in the same change; a contribution that adds a tool adds its
 self-test and the skill that drives it. The contract checks what it can check
 mechanically, and a human reviews the rest.
 
+## How the content is produced — and a disclaimer
+
+All documentation in this repository is **distilled by AI agents** from the
+cited sources, under the contract above, and reviewed by humans only to the
+extent the maintainers and contributors have had time for. The contract
+checks what can be checked mechanically; it cannot check that a source was
+read correctly. Errors of transcription, attribution and interpretation are
+possible on any page, and every receipt is there so that you can verify the
+claim yourself before relying on it.
+
+The tools compute exactly what their inputs say and nothing more: a
+credence produced here is the output of a stated model, not a measurement
+of anything, and it is only as good as the inputs you gave it. Everything
+is provided **as is**, without warranty of any kind, express or implied;
+nothing here is professional advice of any kind. If you find an error, open
+an issue or a pull request.
+
 ## Licensing
 
 Tooling and configuration are **MIT**; documentation is **CC BY-SA 4.0**.
