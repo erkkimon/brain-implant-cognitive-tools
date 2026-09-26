@@ -2,14 +2,15 @@
 type: todo
 title: Open
 description: What is still to be done — the implant's live work queue.
-timestamp: 2026-09-25T21:30:00Z
+timestamp: 2026-09-26T12:08:14Z
 ---
 
 # Open
 
 Tasks that surface mid-work land here instead of derailing the task at hand.
 Check this list before planning new work. Tick an item as `- [x] … (done:
-YYYY-MM-DD)` and move it to `archive/YYYY-MM-DD.md` the same or the next day.
+YYYY-MM-DD)` and move it to `archive/YYYY-MM-DD.md` the same or the next day
+(first day closed: [2026-09-25](archive/2026-09-25.md)).
 
 ## Knowledge
 
