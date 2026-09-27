@@ -4,14 +4,14 @@ about: concept
 title: "Compute, never guess"
 description: "Every number in this implant that a deterministic tool could produce must come from that tool, not from a language model's head — because an LLM emits fluent, confident arithmetic that is quietly and frequently wrong; the tools in skills/tools/ exist to replace gut-feeling math with math that actually computes and can be re-run by anyone."
 tags: [convention, tools, calculators, arithmetic, reliability, epistemics]
-timestamp: 2026-09-25T18:30:00Z
+timestamp: 2026-09-27T12:19:44Z
 half_life: 0
 ---
 
 # Compute, never guess
 
 Decided by erkkimon on 2026-09-25, founding the cognitive-tools implant
-([journal](../journals/2026-09-25.md)):
+([journal](../journals/archive/2026/09/2026-09-25.md)):
 
 > *"LLMs very eagerly calculate stuff based on their gut feeling, which pretty
 > much always goes more or less to hell. […] LLM-based agents should always be

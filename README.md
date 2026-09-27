@@ -91,7 +91,7 @@ them to your agent as MCP tools — `brain_overview`, `brain_search`,
 `brain_read`, `brain_neighbors`. Skills are listed first and boosted in
 search, so the moment the agent is about to say "unlikely", a search for
 that surfaces the procedure that computes it instead. Several implants and
-the agent's own brain federate into one address space, which is how this
+the agent's cortex federate into one address space, which is how this
 implant and the philosophy implant work as one: the philosophy side holds
 the factors, this side holds the arithmetic.
 

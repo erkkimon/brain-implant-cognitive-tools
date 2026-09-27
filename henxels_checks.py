@@ -1,4 +1,4 @@
-"""Custom checks for the brain (scaffolded by `henxels init --template brainpick-brain`)."""
+"""Custom checks for the implant (scaffolded by `henxels init --template brainpick-brain`)."""
 
 import datetime
 import re

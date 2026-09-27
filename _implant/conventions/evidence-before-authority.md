@@ -4,14 +4,14 @@ about: concept
 title: Evidence before authority
 description: A claim is weighed by the evidence behind it and never by who made it — a famous author's thesis and an unknown graduate student's paper are appraised on the same scale, criticism lands on the argument rather than the person, and a proposal's authorship is a separate question (whose idea is this, provably) from its soundness (does the evidence hold).
 tags: [convention, epistemics, bias, assessment, appraisal]
-timestamp: 2026-09-25T18:30:00Z
+timestamp: 2026-09-27T12:19:44Z
 half_life: 0
 ---
 
 # Evidence before authority
 
 Decided by erkkimon on 2026-09-25, founding the cognitive-tools implant
-([journal](../journals/2026-09-25.md)). The tools here exist to appraise
+([journal](../journals/archive/2026/09/2026-09-25.md)). The tools here exist to appraise
 claims *in the light of evidence* — how much of a belief stands on
 established fact, how hard that evidence is, and where it becomes faith.
 That appraisal is worthless if it flinches when the author is famous, and

@@ -4,14 +4,14 @@ about: concept
 title: Every claim carries its receipt
 description: No statement of fact enters this implant without a resolvable, verifiable citation attached to that specific statement — a DOI, a public dataset accession, a pinned document revision, an edition and page — because the value this implant adds over a model's own memory is not the fact but the source, and a fact whose source cannot be checked is indistinguishable from a fluent guess.
 tags: [convention, grounding, citation, traceability, provenance]
-timestamp: 2026-09-25T18:30:00Z
+timestamp: 2026-09-27T12:19:44Z
 half_life: 0
 ---
 
 # Every claim carries its receipt
 
 Decided by erkkimon on 2026-09-25, founding the cognitive-tools implant
-([journal](../journals/2026-09-25.md)): *"the traceability of the information
+([journal](../journals/archive/2026/09/2026-09-25.md)): *"the traceability of the information
 is fucking important. It is possible that a model is right if it states
 something, but even if it is right and knows already something that is in
 this brain implant, it doesn't know the source which this brain implant
@@ -79,7 +79,7 @@ They are allowed, and they are marked. Three kinds:
   grounding rule accepts "this is an assumption" as valid grounding
   precisely so that assumptions are declared rather than disguised.
 - **A judgement** — this implant's own assessment, which is what an
-  appraisal's elicited inputs consist of. It is labelled as this brain
+  appraisal's elicited inputs consist of. It is labelled as this
   implant's judgement, and it shows its reasoning from cited premises so a
   reader can disagree with the step rather than the conclusion.
 

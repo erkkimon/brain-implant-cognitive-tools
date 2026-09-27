@@ -2,7 +2,7 @@
 type: skill
 title: Using the brain implant
 description: "Use when reading from or writing to this brain implant — before answering from memory, before grepping, and before adding or changing any doc in _implant/. Explains what an implant is (one half of a brain, the other half being the agent's own cortex), where opinions go (the cortex, never here), and the read and write discipline the contract enforces."
-timestamp: 2026-09-25T18:30:00Z
+timestamp: 2026-09-27T12:19:44Z
 depends_on: []
 export: agent-skill
 ---
@@ -43,7 +43,7 @@ changes, re-read before acting on what you remembered.
 
 ## Reading: most distilled first
 
-1. **The closest brain first.** If several are mounted (your cortex, this
+1. **The closest mount first.** If several are mounted (your cortex, this
    implant, other implants), the one closest to the task wins when they
    disagree — but only the cortex may hold a *conclusion*; an implant holds
    what was said and the tools to weigh it.
@@ -116,9 +116,9 @@ short.
   maintainer to review and stage; a change that sits on one machine is not
   shared memory. Contributions from outside arrive as pull requests.
 
-## Several brains: subsidiarity
+## Cortex and several implants: subsidiarity
 
-When brains conflict: the closest wins. Update both. Then decide — keep the
+When the cortex and implants, or two implants, conflict: the closest wins. Update both. Then decide — keep the
 information duplicated (readers of the farther implant may not have the
 closer one) or replace it with a `brain://` pointer. Record the episode in
 the journal of the implant that changed. Never resolve a conflict by writing
@@ -127,7 +127,7 @@ your *verdict* into an implant — that is a cortex entry.
 ## Where this comes from
 
 Evergreen concepts live in [Knowledge](../knowledge/index.md); what happened
-and when, in the [Journals](../journals/index.md). The brain format and its
+and when, in the [Journals](../journals/index.md). brainpick's brain format (cortex plus implants) and its
 reasoning live in brainpick's wiki:
 https://github.com/benquemax/brainpick/blob/main/docs/brain.md — data flow,
 grounding, subsidiarity, and what is fixed for life versus cheap to change.

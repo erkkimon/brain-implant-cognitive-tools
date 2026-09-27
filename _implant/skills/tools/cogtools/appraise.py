@@ -280,7 +280,7 @@ class Appraisal:
           `dominance` is that ratio, and it does not compress at the tails.
 
         The verdict uses dominance, with the probability table always printed
-        so a reader can judge for themselves. Thresholds are this brain's
+        so a reader can judge for themselves. Thresholds are this implant's
         stated reporting convention, not a result from the literature.
         """
         rows = [(p, self.posterior(prior_p=p)) for p in priors]

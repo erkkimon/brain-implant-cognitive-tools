@@ -4,7 +4,7 @@ about: concept
 title: Raw holds excerpts, not copies
 description: What may be stored under raw/ — only the minimum excerpt needed to support a citation with enough context to check it, always beside a link to the original source where the full material can be fetched; never a wholesale copy of a copyrighted work, because this repository is public and redistributing source material is a legal exposure the project does not need.
 tags: [convention, raw, copyright, legal, sources, public]
-timestamp: 2026-09-25T18:30:00Z
+timestamp: 2026-09-27T12:19:44Z
 half_life: 0
 ---
 
@@ -94,7 +94,7 @@ open web.
 ## How this is enforced
 
 Two layers, both described in the
-[founding of this rule](../journals/2026-09-25.md):
+[founding of this rule](../journals/archive/2026/09/2026-09-25.md):
 
 - The standing [raw/ is orderly source material](../conventions/index.md)
   henxel keeps `raw/` named and indexed.

@@ -30,8 +30,8 @@ henxels:
     allowed_filetypes: .md
     filename_casing: kebab-case
 
-  # --- the brainpick brain (brainpick-brain template) ----------------------
-  # _implant/ is a BRAIN IMPLANT: an OKF wiki mounted beside an agent's own brain (its cortex), in the
+  # --- the brainpick implant (brainpick-brain template) ----------------------
+  # _implant/ is a BRAIN IMPLANT: an OKF wiki mounted beside the agent's cortex (its own brainpick repo), in the
   # brainpick brain format (spec/85). Folders are memory types; information
   # flows journals -> knowledge -> skills and is read in reverse. The why:
   # https://github.com/benquemax/brainpick/blob/main/docs/brain.md
@@ -146,7 +146,7 @@ henxels:
   - henxel: "Every claim is grounded — knowledge, skills, plans and conventions link to where they came from"
     why: >
       Wikipedia-style, inline, a plain link at the claim: a journal entry (a
-      decision this implant made), an external page, another brain or implant
+      decision this implant made), an external page, the cortex or another implant
       (brain://slug-id/path), or say in words that it is an assumption. A
       page with no outbound links is ungrounded and fails, not warns.
       Journals are the primary sources and are exempt.
@@ -283,7 +283,7 @@ henxels:
   - henxel: "_temp stays gitignored"
     why: >
       _temp/ is free scratch space; nothing in it is ever committed, and
-      brainpick always excludes it from the brain.
+      brainpick always excludes it from the implant.
     in: .
     run_before_commit: git check-ignore -q _temp
 

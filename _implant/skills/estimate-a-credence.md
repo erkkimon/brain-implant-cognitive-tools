@@ -2,7 +2,7 @@
 type: skill
 title: Estimate a credence
 description: "Use whenever you or the user are about to say how likely something is — 'probably', 'unlikely', 'I'd say 30 %' — and the question is genuinely one of belief under uncertainty rather than a fact that can be looked up. Turns the gut feeling into a stated, replayable model built with the user: reference class, factors, likelihood ratios as intervals, a Monte Carlo range, and a verdict on whether evidence or prior is carrying the result — then hands the model back so the user can change the inputs."
-timestamp: 2026-09-25T18:30:00Z
+timestamp: 2026-09-27T12:19:44Z
 depends_on: [using-the-brain-implant.md]
 tools:
   - skills/tools/cogtools.py
@@ -149,7 +149,7 @@ The example model, `tools/models/example-provocation.appraisal.json`, shipped
 with the tool is deliberately called a *provocation*: every number in it is
 a placeholder, and its only purpose is to nudge a reader and their agent
 into replacing it with a better model built from their own beliefs
-([journal](../journals/2026-09-25.md)). Never cite it as a result. Copy it,
+([journal](../journals/archive/2026/09/2026-09-25.md)). Never cite it as a result. Copy it,
 overwrite it, argue about it.
 
 ## What never happens here

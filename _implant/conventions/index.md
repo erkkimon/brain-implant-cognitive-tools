@@ -16,3 +16,6 @@ Read these first — a rule constrains what every other read is for.
 * [Evidence before authority](evidence-before-authority.md) — claims are appraised by their evidence, never by who made them; criticism lands on the argument; absence of evidence counts only in proportion to how hard the search looked; and "is this really their claim?" (provenance) is a separate question from "is it true?" (soundness).
 * [Written to be public](written-to-be-public.md) — the repository is public from its first commit and every page is addressed to a stranger on the open internet: no host names, no internal paths, no personal detail beyond the maintainer's chosen handle, no credentials, no assumption of anyone's infrastructure. Pull requests are welcome.
 * [Raw holds excerpts, not copies](raw-holds-excerpts-not-copies.md) — `raw/` stores only the minimum excerpt needed to support a citation, with enough context to check it, always beside a resolvable pointer to the original; never a wholesale copy of a copyrighted work, because the repository is public. Enforced by a `make_sure_that` judge henxel.
+* [An implant is not a brain](an-implant-is-not-a-brain.md) — a brain is
+  the cortex (one repo registered `--cortex`) plus implants; this repo is an
+  implant, its root is `_implant/`, and nothing here calls it "the brain".

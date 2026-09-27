@@ -4,13 +4,13 @@ about: concept
 title: "Manifest: tools for the blind spots of a language model"
 description: "Why this implant exists and what it may hold — small, deterministic, replayable tools that cover the things a language model's architecture does badly: arithmetic it emits instead of computing, probabilities it states as if measured, confidence without a source; each tool ships with its self-test, the skill that drives it, and the documented case against its method. Everything else in the implant should be derivable from this page."
 tags: [vision, manifest, cognitive-tools, bayesian, llm, blind-spots]
-timestamp: 2026-09-25T18:30:00Z
+timestamp: 2026-09-27T12:19:44Z
 half_life: 0
 ---
 
 # Manifest: tools for the blind spots of a language model
 
-Founded by erkkimon on 2026-09-25 ([journal](../journals/2026-09-25.md)).
+Founded by erkkimon on 2026-09-25 ([journal](../journals/archive/2026/09/2026-09-25.md)).
 
 ## The problem
 

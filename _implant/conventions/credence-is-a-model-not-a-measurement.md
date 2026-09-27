@@ -4,14 +4,14 @@ about: concept
 title: Credence is a model, not a measurement
 description: Numeric probabilities attached to hypotheses in this implant are the output of a stated, replayable model — a decomposition into factors, a prior, and explicit likelihood ratios with their justifications — never a claim to have measured a truth; the contribution is the structure and its defensible inputs, so any reader can substitute their own numbers and recompute, and the spread of results across reasonable inputs is itself the report on how much of a belief is evidence and how much is faith.
 tags: [convention, bayesian, epistemics, credence, uncertainty, replicability]
-timestamp: 2026-09-25T18:30:00Z
+timestamp: 2026-09-27T12:19:44Z
 half_life: 0
 ---
 
 # Credence is a model, not a measurement
 
 Decided by erkkimon on 2026-09-25, founding the cognitive-tools implant
-([journal](../journals/2026-09-25.md)):
+([journal](../journals/archive/2026/09/2026-09-25.md)):
 
 > *"It is at least a formal way to systematically get some kind of a number
 > for beliefs, and of course, we cannot say exact probabilities for the
@@ -179,7 +179,7 @@ away quoting the example's posterior has misused it; a reader who walks
 away with a different posterior and a clear picture of *which input made
 the difference* has used it as intended. This framing is erkkimon's
 founding decision for the implant
-([journal](../journals/2026-09-25.md)), and it is why the file's name says
+([journal](../journals/archive/2026/09/2026-09-25.md)), and it is why the file's name says
 what it is.
 
 ## What this does not claim
